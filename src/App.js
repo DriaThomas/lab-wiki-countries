@@ -1,25 +1,64 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
+import CountriesList from './components/CountriesList'
+import CountryDetails from './components/CountryDetails'
+// import Home from "./components/Home"
+import countries from "./countries"
+import { Switch, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      countries
+    };
+  }
+  render() {
+    return (
+      <div className="App">
+
+        <Navbar />
+        <Switch>
+          {/* <Route exact path="/" component={Home} />
+          <Route exact path="/list" render={() => <CountriesList data={this.state.data} />} />
+          {/* exact render={() => <List contacts={contacts} />}  */}
+          {/* <Route exact path="/details" component={CountryDetails} /> */}
+
+          {/* <Route
+            path="/details/:contactID"
+            render={(props) => <CountriesList country={this.state.country} {...props} />}
+          /> */}
+
+
+          <Route
+            exact
+            path="/"
+            render={(props) => (
+              <CountriesList countries={this.state.countries} />
+            )}
+          />
+
+          <Route
+            exact
+            path="/details/:id"
+            render={(props) => (
+              <CountryDetails {...props} countries={this.state.countries} />
+            )}
+          />
+
+
+        </Switch>
+
+        {/* <Home />
+        <CountriesList />
+        <CountryDetails /> */}
+
+      </div>
+
+    );
+  }
 }
 
 export default App;

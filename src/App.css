@@ -15,19 +15,31 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
+
+.App-header ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  align-items: center;
+  width: 100%;
 }
 
 .App-link {
-  color: #61dafb;
+  color:white;
 }
 
+.center-content{
+  margin: 10px;
+}
+.countryNameFlag{
+  margin: 10px;
+  border: solid;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
