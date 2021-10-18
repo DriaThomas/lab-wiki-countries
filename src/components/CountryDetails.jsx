@@ -9,7 +9,7 @@ class CountryDetails extends React.Component {
     }
 
     countryDetails(props) {
-        return props.countries.map((country) => {
+        return props.countries.fliter((country) => {
             if (country.cca3 === props.match.params.id) {
                 return (
                     <div>
@@ -33,6 +33,11 @@ class CountryDetails extends React.Component {
         });
 
     }
+
+    render() {
+        return <div className="detail-container">{this.state.country && this.countryDetails()}</div>;
+    }
 }
+
 
 export default CountryDetails;

@@ -50,6 +50,7 @@ class App extends Component {
 
 
         </Switch>
+        <CountryDetails />
 
         {/* <Home />
         <CountriesList />
